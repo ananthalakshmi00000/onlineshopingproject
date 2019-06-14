@@ -38,7 +38,7 @@ public class Categorytestcases
 		
 		assertTrue("Problem in adding the category",categoryDAO.addCategory(category));
 	}
-	//@Ignore
+	@Ignore
 	@Test
 	public void deleteCategoryTest()
 	{

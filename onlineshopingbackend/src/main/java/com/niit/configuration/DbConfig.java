@@ -4,7 +4,6 @@ package com.niit.configuration;
 import java.util.Properties;
 
 
-
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -18,16 +17,19 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.model.Category;
+import com.niit.model.Product;
 import com.niit.model.Supplier;
-
+import com.niit.model.UserInfo;
 
 
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(basePackages = {"com.niit"})
 
-public class DbConfig {
-@Bean(name="dataSource")
+public class DbConfig 
+{
+	
+	@Bean(name="dataSource")
 	
 	public DataSource getDataSource()
 	{
@@ -47,7 +49,7 @@ public class DbConfig {
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
-		Class classes[]=new Class[]{Category.class,Supplier.class};
+		Class classes[]=new Class[]{Category.class,Supplier.class,Product.class,UserInfo.class};
 		return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 		
 	}
