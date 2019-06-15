@@ -45,13 +45,13 @@ public ProductDAOImpl()
 
 	}
 
-	public List<Product> listCategories() {
+	public List<Product> listProducts() {
 
 		Session session=sessionFactory.openSession();
         Query query=session.createQuery("from Product");
-        List<Product> listCategories=query.list();
+        List<Product> listProducts=query.list();
         session.close();
-		return listCategories;
+		return listProducts;
 
 	}
 

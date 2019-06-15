@@ -44,13 +44,13 @@ public SupplierDAOImpl()
 
 	}
 
-	public List<Supplier> listCategories() {
+	public List<Supplier> listSuppliers() {
 
 		Session session=sessionFactory.openSession();
         Query query=session.createQuery("from Supplier");
-        List<Supplier> listCategories=query.list();
+        List<Supplier> listSuppliers=query.list();
         session.close();
-		return listCategories;
+		return listSuppliers;
 
 	}
 

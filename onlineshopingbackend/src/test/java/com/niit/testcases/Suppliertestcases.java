@@ -26,7 +26,7 @@ public class Suppliertestcases {
 	    
 	    supplierDAO=(SupplierDAO) context.getBean("supplierDAO");
 	}
-	//@Ignore
+	@Ignore
 	@Test
 	public void addSupplierTest()
 	{
@@ -61,7 +61,7 @@ public class Suppliertestcases {
 	@Test
 		public void listAllCategoriesTestCase() {
 			
-		int actualSize = supplierDAO.listCategories().size();
+		int actualSize = supplierDAO.listSuppliers().size();
 			assertEquals(2, actualSize);
 			
 		}

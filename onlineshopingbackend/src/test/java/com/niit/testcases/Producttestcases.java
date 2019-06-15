@@ -69,7 +69,7 @@ public class Producttestcases
 	@Test
 		public void listAllCategoriesTestCase() {
 			
-		int actualSize = productDAO.listCategories().size();
+		int actualSize = productDAO.listProducts().size();
 			assertEquals(2, actualSize);
 			
 		}

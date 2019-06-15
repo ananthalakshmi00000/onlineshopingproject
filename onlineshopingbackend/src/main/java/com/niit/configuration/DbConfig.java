@@ -16,7 +16,9 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.model.CartItem;
 import com.niit.model.Category;
+import com.niit.model.OrderDetail;
 import com.niit.model.Product;
 import com.niit.model.Supplier;
 import com.niit.model.UserInfo;
@@ -49,7 +51,7 @@ public class DbConfig
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
-		Class classes[]=new Class[]{Category.class,Supplier.class,Product.class,UserInfo.class};
+		Class classes[]=new Class[]{Category.class,Supplier.class,Product.class,UserInfo.class,CartItem.class,OrderDetail.class};
 		return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 		
 	}
